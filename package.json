@@ -1,0 +1,16 @@
+{
+  "name": "01-random-generator",
+  "version": "1.0.0",
+  "description": "A simple random generator",
+  "license": "ISC",
+  "author": "Adi",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
