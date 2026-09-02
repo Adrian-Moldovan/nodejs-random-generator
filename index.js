@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
                 description: "generate a random number"
             },
             {
-                url: "/number",
+                url: "/letter",
                 description: "generate a random letter"
             }
         ]
