@@ -1,4 +1,6 @@
 import express from 'express';
+import { formatDateYmdHis } from './utils/date.js';
+import { generateRandomLetter, generateRandomNumber, generateRandomRockPaperScissors } from './utils/random.js';
 
 const app = express();
 const _PORT = 3000;
@@ -17,6 +19,10 @@ app.get('/', (req, res) => {
             {
                 url: "/letter",
                 description: "generate a random letter"
+            },
+            {
+                url: "/rock-paper-scissors",
+                description: "generate a random rock - papers - scissors option"
             }
         ]
     });
@@ -26,7 +32,8 @@ app.get('/', (req, res) => {
 app.get('/number', (req, res) => {
     res.json({
         description: "Generates a random number",
-        value: Math.floor(Math.random() * 100)
+        value: generateRandomNumber(),
+        timestamp: formatDateYmdHis()
     });
 })
 
@@ -34,7 +41,17 @@ app.get('/number', (req, res) => {
 app.get('/letter', (req, res) => {
     res.json({
         description: "Generates a random letter",
-        value: String.fromCharCode(65 + Math.floor(Math.random() * 26))
+        value: generateRandomLetter(),
+        timestamp: formatDateYmdHis()
+    });
+})
+
+
+app.get('/rock-paper-scissors', (req, res) => {
+    res.json({
+        description: "Generates a rock - papers - scissors option",
+        value: generateRandomRockPaperScissors(),
+        timestamp: formatDateYmdHis()
     });
 })
 

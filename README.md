@@ -52,6 +52,10 @@ Example response:
         { 
             "url": "/letter", 
             "description": "generate a random letter" 
+        }, 
+        { 
+            "url": "/rock-paper-scissors", 
+            "description": "generate a random rock - papers - scissors option" 
         } ] 
 }
 ````
@@ -63,7 +67,8 @@ Example response:
 ````
 { 
     "description": "Generates a random number", 
-    "value": 42 
+    "value": 42, 
+    "timestamp": "2026-09-06 12:14:42" 
 }
 ````
 
@@ -75,7 +80,21 @@ Example response:
 ````
 { 
     "description": "Generates a random letter", 
-    "value": "G" 
+    "value": "G", 
+    "timestamp": "2026-09-06 12:14:42" 
+}
+````
+
+
+### GET /rock-paper-scissors
+Generates a random option for a rock - paper - scissors game.
+
+Example response:
+````
+{ 
+    "description": "Generates a rock - papers - scissors option", 
+    "value": "paper", 
+    "timestamp": "2026-09-06 12:14:42" 
 }
 ````
 
