@@ -56,6 +56,6 @@ app.get('/rock-paper-scissors', (req, res) => {
 })
 
 
-app.listen(3000, () => {
+app.listen(_PORT, () => {
     console.log(`Server running on http://localhost:${_PORT}`);
 });
