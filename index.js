@@ -4,8 +4,29 @@ import { generateRandomLetter, generateRandomNumber, generateRandomRockPaperScis
 
 const app = express();
 const _PORT = 3000;
+const _LOGS_ACTIVE = true;
 
 console.log('Starting random generator...');
+
+function displayLog(req) {
+    console.log(`=====================`)
+    console.log(`New request received:`)
+    console.log({
+        method: req.method,
+        endpoint: req.originalUrl,
+        ip: req.ip
+    });
+}
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    _LOGS_ACTIVE && displayLog(req);
+
+    next();
+});
 
 app.get('/', (req, res) => {
     res.json({
